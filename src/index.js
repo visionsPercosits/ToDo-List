@@ -16,10 +16,15 @@ adicionarTarefa('Jogar');
 // Listar todas as tarefas
 
 const listarTarefas = () => {
-  tarefas.forEach((tarefa => {
-    console.log(`Tarefa: ${tarefa.nome}`);
-  }));
+  tarefas.forEach((tarefa) => {
+      const status = tarefa.concluida ? 'Concluída!' : 'Pendente.';
+      console.log(`Tarefa: ${tarefa.nome} => ${status}`);
+  });
 };
+
+
+listarTarefas();
+
 
 
 
