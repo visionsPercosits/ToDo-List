@@ -22,8 +22,15 @@ const listarTarefas = () => {
   });
 };
 
+// Remover uma tarefa
 
-listarTarefas();
+const removerTarefa = index => {
+  const tarefa = tarefas.indexOf(index);
+  if (tarefa > -1) { // Se o item for encontrado, ele irá retornar um valor a cima de -1 (indexOf)
+    tarefas.splice(index, 1);
+    console.log('Tarefa removida com sucesso.');
+  }
+}
 
 
 
