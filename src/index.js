@@ -24,14 +24,23 @@ const listarTarefas = () => {
 
 // Remover uma tarefa
 
-const removerTarefa = index => {
-  const tarefa = tarefas.indexOf(index);
-  if (tarefa > -1) { // Se o item for encontrado, ele irá retornar um valor a cima de -1 (indexOf)
+const removerTarefa = nome => {
+  const index = tarefas.findIndex(tarefa => tarefa.nome === nome); // Procurar pelo valor específico da propriedade ao em vez do index
+  if (index > -1) {
     tarefas.splice(index, 1);
     console.log('Tarefa removida com sucesso.');
   }
+};
+
+
+// Concluir uma tarefa
+
+const concluirTarefa = nome => {
+  const index = tarefas.findIndex(tarefa => tarefa.nome === nome);
+  tarefas[index].concluida = true;
+
+  console.log('Tarefa concluída com sucesso.');
+  tarefas.splice(index, 1);
+  console.log('Tarefa removida após ser concluída!');
 }
-
-
-
 
